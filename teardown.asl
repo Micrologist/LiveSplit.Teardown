@@ -13,6 +13,11 @@ state("teardown", "v0.5.2")
     bool loading : 0x00408598, 0xB0, 0x301048;
 }
 
+state("teardown", "v0.5.5")
+{
+    bool loading : 0x0040E7F8, 0xB0, 0x301048;
+}
+
 startup
 {
     if (timer.CurrentTimingMethod == TimingMethod.RealTime)
@@ -36,6 +41,9 @@ init
     int moduleSize = modules.First().ModuleMemorySize;
     switch (moduleSize)
     {
+        case 4804608:
+            version = "v0.5.5";
+            break;
         case 4747264:
             version = "v0.5.2";
             break;
