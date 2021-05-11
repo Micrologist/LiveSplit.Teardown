@@ -28,6 +28,11 @@ state("teardown", "v0.6.2 (patch 1)")
     bool loading : 0x0041CB00, 0xB0, 0x301048;
 }
 
+state("teardown", "v0.7.2")
+{
+    bool loading : 0x00436A30, 0xB8, 0x301048;
+}
+
 
 startup
 {
@@ -52,6 +57,9 @@ init
     int moduleSize = modules.First().ModuleMemorySize;
     switch (moduleSize)
     {
+        case 4972544:
+                version = "v0.7.2";
+                break;
         case 4866048:
             version = "v0.6.2 (patch 1)";
             break;
