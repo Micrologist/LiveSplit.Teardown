@@ -58,8 +58,8 @@ init
     switch (moduleSize)
     {
         case 4972544:
-                version = "v0.7.2";
-                break;
+            version = "v0.7.2";
+            break;
         case 4866048:
             version = "v0.6.2 (patch 1)";
             break;
