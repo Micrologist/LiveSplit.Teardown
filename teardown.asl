@@ -3,34 +3,39 @@ state("teardown", "Release Version")
     bool loading : 0x003E3520, 0xB8, 0x301048;
 }
 
-state("teardown", "v0.4.6")
+state("teardown", "0.4.6")
 {
     bool loading : 0x003E4520, 0xB8, 0x301048;
 }
 
-state("teardown", "v0.5.2")
+state("teardown", "0.5.2")
 {
     bool loading : 0x00408598, 0xB0, 0x301048;
 }
 
-state("teardown", "v0.5.5")
+state("teardown", "0.5.5")
 {
     bool loading : 0x0040E7F8, 0xB0, 0x301048;
 }
 
-state("teardown", "v0.5.5 (patch 1)")
+state("teardown", "0.5.5 (patch 1)")
 {
     bool loading : 0x0040F7F8, 0xB0, 0x301048;
 }
 
-state("teardown", "v0.6.2 (patch 1)")
+state("teardown", "0.6.2 (patch 1)")
 {
     bool loading : 0x0041CB00, 0xB0, 0x301048;
 }
 
-state("teardown", "v0.7.2")
+state("teardown", "0.7.2")
 {
     bool loading : 0x00436A30, 0xB8, 0x301048;
+}
+
+state("teardown", "0.7.4")
+{
+    bool loading : 0x0043AA50, 0xB8, 0x301048;
 }
 
 
@@ -57,23 +62,26 @@ init
     int moduleSize = modules.First().ModuleMemorySize;
     switch (moduleSize)
     {
+        case 4993024:
+            version = "0.7.4";
+            break;
         case 4972544:
-            version = "v0.7.2";
+            version = "0.7.2";
             break;
         case 4866048:
-            version = "v0.6.2 (patch 1)";
+            version = "0.6.2 (patch 1)";
             break;
         case 4808704:
-            version = "v0.5.5 (patch 1)";
+            version = "0.5.5 (patch 1)";
             break;
         case 4804608:
-            version = "v0.5.5";
+            version = "0.5.5";
             break;
         case 4747264:
-            version = "v0.5.2";
+            version = "0.5.2";
             break;
         case 4599808:
-            version = "v0.4.6";
+            version = "0.4.6";
             break;
         default:
             version = "Release Version";
