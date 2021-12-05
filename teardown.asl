@@ -46,6 +46,7 @@ state("teardown", "0.8.0")
 state("teardown", "0.9.0")
 {
     bool loading : 0x00455100, 0xB8, 0x301048;
+}
 
 startup
 {
