@@ -68,6 +68,11 @@ state("teardown", "1.1.0")
     bool loading : 0x00420690, 0xB8, 0x301048;
 }
 
+state("teardown", "1.6.2")
+{
+    bool loading : 0x00B52D90, 0xC8, 0x344028;
+}
+
 startup
 {
     if (timer.CurrentTimingMethod == TimingMethod.RealTime)
@@ -91,47 +96,50 @@ init
     int moduleSize = modules.First().ModuleMemorySize;
     switch (moduleSize)
     {
-        case 4784128:
+        case 0xF19000:
+            version = "1.6.2";
+            break;
+        case 0x490000:
             version = "1.1.0";
             break;
-        case 4796416:
+        case 0x493000:
             version = "1.0.0";
             break;
-        case 4960256:
+        case 0x4BB000:
             version = "0.9.5";
             break;
-        case 5107712:
+        case 0x4DF000:
             version = "0.9.2 (patch 1)";
             break;
-        case 5103616:
+        case 0x4DE000:
             version = "0.9.0";
             break;
-        case 5021696:
+        case 0x4CA000:
             version = "0.8.0";
             break;
-        case 4993024:
+        case 0x4C3000:
             version = "0.7.4";
             break;
-        case 4972544:
+        case 0x4BE000:
             version = "0.7.2";
             break;
-        case 4866048:
+        case 0x4A4000:
             version = "0.6.2 (patch 1)";
             break;
-        case 4808704:
+        case 0x496000:
             version = "0.5.5 (patch 1)";
             break;
-        case 4804608:
+        case 0x495000:
             version = "0.5.5";
             break;
-        case 4747264:
+        case 0x487000:
             version = "0.5.2";
             break;
-        case 4599808:
+        case 0x463000:
             version = "0.4.6";
             break;
         default:
-            version = "Release Version";
+            version = "Unknown (0x"+moduleSize.ToString("X")+")";
             break;
     }
 }
