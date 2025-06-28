@@ -88,9 +88,9 @@ startup
     if (timer.CurrentTimingMethod == TimingMethod.RealTime)
     {
         var timingMessage = MessageBox.Show(
-            "This game uses RTA w/o Loads as the main timing method.\n"
+            "This game uses Time without Loads (LRT) as the main timing method.\n"
             + "LiveSplit is currently set to show Real Time (RTA).\n"
-            + "Would you like to set the timing method to RTA w/o Loads?",
+            + "Would you like to set the timing method to LRT?",
             "Teardown | LiveSplit",
             MessageBoxButtons.YesNo, MessageBoxIcon.Question
         );
